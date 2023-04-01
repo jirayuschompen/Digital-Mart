@@ -12,22 +12,20 @@
     <h3 class="text-center">ฟอร์มบันทึกข้อมูลด้วย HTML</h3>
   </div>
   <form method="post" autocomplete="off" name="hello-sheet">
-    <div class="form-group">
-      <label for="name">ชื่อ สกุล</label>
-      <input type="text" class="form-control"  placeholder="ชื่อ สกุล" name="ชื่อ-สกุล">
-    </div>
-    <div class="form-group">
-    <label for="name">ชื่อเล่น</label>
-      <input type="text" class="form-control"  placeholder="ชื่อเล่น" name="ชื่อเล่น">
-    </div>
-     <div class="form-group">
-    <label for="name">เบอร์โทร</label>
-      <input type="text" class="form-control"  placeholder="เบอร์โทร" name="เบอร์โทร">
-    </div>
   <div class="form-group">
     <label for="exampleInputEmail1">อีเมล</label>
     <input type="email" name="อีเมล" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="อีเมล">
-  </div>
+  </div>  
+  
+    <div class="form-group">
+      <label for="name">ชื่อ</label>
+      <input type="text" class="form-control"  placeholder="ชื่อ" name="ชื่อ">
+    </div>
+    <div class="form-group">
+    <label for="name">รหัส</label>
+      <input type="password" class="form-control"  placeholder="รหัส" name="รหัส">
+    </div>
+     
     
   <button type="submit" name="submit" value="Send message" class="btn btn-primary">บันทึก</button>
 </form>
@@ -36,7 +34,7 @@
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxYq674QfOtJ0nbt25eC4Rxn3lvILr61zYqhd3Q8V-EJHx6D1Lz_ExTtV6OLjgm4gyiig/exec'
             const form = document.forms['hello-sheet']
           
-            form.addEventListener('submit', e => {
+            form.addEventListener('submit', e => {  
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => alert("บันทึกข้อมูลเรียบร้อยแล้ว.."))
